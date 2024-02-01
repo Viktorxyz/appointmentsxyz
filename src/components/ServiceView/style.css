@@ -1,0 +1,11 @@
+.container.service-view {
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem;
+}
+
+.service-view>.inputs {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}

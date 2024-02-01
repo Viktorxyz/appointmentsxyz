@@ -1,0 +1,40 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox>input {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.checkbox>input:checked~span:after {
+  width: 90%;
+  height: 90%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.checkbox>span {
+  display: flex;
+  border: 2px solid var(--turquoise);
+  border-radius: 6px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  padding: 1px;
+  margin-right: .5rem;
+}
+
+.checkbox>span:after {
+  content: "";
+  width: 0%;
+  height: 0%;
+  margin-top: 55%;
+  margin-left: 55%;
+  transition-property: width, height, margin-top, margin-left;
+  transition-duration: .25s;
+  border-radius: 4px;
+  background-color: var(--turquoise);
+}

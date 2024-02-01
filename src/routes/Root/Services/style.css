@@ -1,0 +1,19 @@
+.services {
+  position: relative;
+}
+
+.services>.list-services {
+  margin-block: 2rem;
+}
+
+.services>.new-service {
+  background-color: var(--turquoise);
+  display: flex;
+  position: absolute;
+  border-radius: calc(var(--plus-width) / 4);
+  bottom: 0;
+  right: 0;
+  width: var(--plus-width);
+  margin: 1.5rem;
+  padding: .75rem;
+}

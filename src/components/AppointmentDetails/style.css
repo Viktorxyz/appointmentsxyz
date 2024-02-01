@@ -1,0 +1,30 @@
+.appointment-details {
+  height: 100%;
+}
+
+.appointment-details>.inputs {
+  height: 100%;
+}
+
+.appointment-details .date-and-time {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 10rem;
+  width: 100%;
+  gap: .5rem;
+}
+
+.appointment-details .date-and-time>* {
+  width: 100%;
+}
+
+.appointment-details .date-and-time>.time {
+  display: flex;
+  justify-content: space-around;
+  gap: .5rem;
+}
+
+.appointment-details .date-and-time>.time>input {
+  text-align: center;
+}

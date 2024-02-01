@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // function hasRole(role) {
+    //   return request.auth.uid in get(databases/$(database)/documents/UserRoles/$(role)).data.users
+    // }
+    // function isAdmin() {
+    //   return hasRole("ADMIN")
+    // }
+    function hasPermission(permission) {
+      return request.auth.uid in get(/databases/$(database)/documents/UserPermissions/$(permission)).data.users
+    }
+    function signedIn() {
+      return request.auth != null
+    }
+    function isAuthor(user_id, doc_id) {
+      return user_id == doc_id
+    }
+    function hasAllFields(fields) {
+      return request.resource.data.keys().hasAll(fields)
+    }
+    function hasOnlyFields(fields) {
+      return request.resource.data.keys().hasOnly(fields)
+    }
+    // match /{documents=**} {
+    //   allow read, write: if signedIn() && hasPermission("ALL_PERMISSIONS")
+    // }
+    match /User/{userId} {
+      allow create: if signedIn() && hasPermission('USER_CREATE') && hasAllFields(["username", "gender"])
+      allow read:   if signedIn() && (isAuthor(request.auth.uid, userId) || hasPermission('USER_READ'))
+      allow update: if signedIn() && (isAuthor(request.auth.uid, userId) || hasPermission('USER_UPDATE')) && hasOnlyFields(["username", "gender"])
+      allow delete: if signedIn() && (isAuthor(request.auth.uid, userId) || hasPermission('USER_DELETE'))
+    }
+
+    match /Role/{roleId} {
+      allow create: if signedIn() && (hasPermission('ROLE_CREATE'))
+      allow read:   if signedIn() && (hasPermission('ROLE_READ'))
+      allow update: if signedIn() && (hasPermission('ROLE_UPDATE'))
+      allow delete: if signedIn() && (hasPermission('ROLE_DELETE'))
+    }
+
+    match /UserPermissions/{permissionId} {
+      // allow create: if debug(get(/databases/$(database)/documents/UserPermissions/PERMISSION_CREATE).data)
+      allow create: if signedIn() && hasPermission('PERMISSION_CREATE')
+      allow read:   if signedIn() && hasPermission('PERMISSION_READ')
+      allow update: if signedIn() && hasPermission('PERMISSION_UPDATE')
+      allow delete: if signedIn() && hasPermission('PERMISSION_DELETE')
+    }
+  }
+}

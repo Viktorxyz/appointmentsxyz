@@ -1,0 +1,34 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.user__profile-image-wrapper {
+  display: flex;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 15%;
+}
+
+.user__profile-image {
+  display: flex;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--turquoise);
+  color: var(--color-bg);
+}
+
+.user__profile-image>h1 {
+  font-size: 5rem;
+}
+
+.user__username {}
+
+.user__roles {}

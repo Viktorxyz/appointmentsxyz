@@ -1,0 +1,36 @@
+.calendar-month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  z-index: 99;
+  background-color: var(--color-bg);
+}
+
+.calendar-month-grid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.calendar-month-grid-cell[data-today=true] {
+  color: var(--color-bg);
+  background-color: var(--light-sea-green);
+}
+
+.calendar-month-grid-cell[data-current=true] {
+  color: var(--color-bg);
+  background-color: var(--turquoise);
+}
+
+.calendar-month-grid__date {
+  color: var(--color-month-grid-date);
+  border-radius: 100vw;
+  aspect-ratio: 1 / 1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.calendar-month-grid__weekday {
+  font-weight: bold;
+}

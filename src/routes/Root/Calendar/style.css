@@ -1,0 +1,123 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slots {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.slots::-webkit-scrollbar {
+  display: none;
+}
+
+.slot {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 10%;
+}
+
+.slot-time {
+  display: flex;
+  position: relative;
+  width: auto;
+  margin-inline: .5rem;
+  height: 100%;
+}
+
+.calendar-appointment,
+.now-indicator {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+}
+
+.calendar-appointment-content,
+.now-indicator-content {
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
+
+.now-indicator-content {
+  justify-content: start;
+  height: auto;
+}
+
+.now-indicator-pin {
+  display: flex;
+  position: relative;
+  height: max-content;
+  align-items: center;
+  width: 100%;
+}
+
+.now-indicator-pin-head {
+  display: block;
+  background-color: var(--turquoise);
+  width: 10px;
+  height: 10px;
+  border-radius: 100vw;
+}
+
+.now-indicator-pin-line {
+  display: block;
+  position: absolute;
+  background-color: var(--turquoise);
+  width: 100%;
+  border-radius: 100vw;
+  height: 5px;
+}
+
+.calendar-appointment-info {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--turquoise);
+}
+
+.unselectable {
+  color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slot-time--content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 200%;
+}
+
+.slot-area {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--color-text-input);
+}
+
+.calendar>.new-appointment {
+  background-color: var(--turquoise);
+  display: flex;
+  position: absolute;
+  border-radius: calc(var(--plus-width) / 4);
+  bottom: 0;
+  right: 0;
+  width: var(--plus-width);
+  margin: 1.5rem;
+  padding: .75rem;
+}

@@ -1,0 +1,10 @@
+.travel-fee {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.travel-fee>.inputs {
+  height: 100%;
+  justify-content: center;
+}

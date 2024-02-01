@@ -1,0 +1,8 @@
+.input-date .calendar-month-grid {
+  position: absolute;
+  width: 100%;
+}
+
+.input-date .calendar-month-grid[data-state=inactive] {
+  display: none;
+}

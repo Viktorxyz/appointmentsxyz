@@ -1,0 +1,25 @@
+.time-picker {
+  display: flex;
+  font-weight: bold;
+  height: 100%;
+}
+
+.clock-divider {
+  display: flex;
+  align-items: center;
+  margin-inline: 1rem;
+}
+
+.time-picker>* {
+  height: 100%;
+}
+
+.time-picker .loop-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.list-item-time-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

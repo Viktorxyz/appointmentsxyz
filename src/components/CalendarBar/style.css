@@ -1,0 +1,42 @@
+.calendar-bar {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: relative;
+  height: 3rem;
+  background-color: var(--color-bg);
+  border-bottom: 2px solid var(--rich-black);
+}
+
+.calendar-bar__header {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-bar__header>input {
+  height: 50%;
+  filter: invert();
+}
+
+.calendar-bar__title-date {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.calendar-bar__title-arrow {}
+
+.calendar-bar__calendar-month-grid[data-active=true] {
+  display: block;
+}
+
+.calendar-bar__calendar-month-grid[data-active=false] {
+  display: none;
+}
+
+.calendar-bar .calendar-month-grid {
+  border-bottom: 2px solid var(--rich-black);
+  position: absolute;
+  width: 100%;
+}

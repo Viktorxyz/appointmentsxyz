@@ -1,0 +1,15 @@
+.clients {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.clients>.list-clients {
+  margin-block: 2rem;
+}
+
+.list-clients {
+  height: 100%;
+  overflow-y: auto;
+}

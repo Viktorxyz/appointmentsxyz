@@ -1,0 +1,15 @@
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-block: 2rem;
+}
+
+.sign-in__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 2.5rem;
+}

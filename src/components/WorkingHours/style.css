@@ -1,0 +1,21 @@
+.list-working-hours {
+  margin-block: 2rem;
+}
+
+.list-item-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+  min-height: var(--list-item-height);
+  color: var(--white);
+}
+
+.list-item-day__link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: var(--color-text-input);
+}

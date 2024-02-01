@@ -1,0 +1,9 @@
+.list-item-break {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  height: var(--list-item-height);
+}

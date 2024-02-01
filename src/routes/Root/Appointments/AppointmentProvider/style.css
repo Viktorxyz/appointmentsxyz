@@ -1,0 +1,8 @@
+.appointment>.inputs {
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.appointment>.appointment-details {
+  margin-block: 2rem;
+}
